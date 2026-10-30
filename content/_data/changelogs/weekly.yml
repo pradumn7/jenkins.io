@@ -31077,7 +31077,8 @@
       <a href="https://plugins.jenkins.io/javax-activation-api/">JavaBeans Activation
       Framework (JAF) API</a>,
       <a href="https://plugins.jenkins.io/javax-mail-api/">JavaMail API</a>, and
-      <a href="https://plugins.jenkins.io/instance-identity/">Instance Identity plugins</a> are no longer bundled inside jenkins.war,
+      <a href="https://plugins.jenkins.io/instance-identity/">Instance Identity plugins</a>
+      are no longer bundled inside jenkins.war,
       reducing its download size by more than 20 MB.
       This functionality was split out of Jenkins core into these plugins between
       2016 and 2022 (Jenkins 2.16 through 2.356).
@@ -31369,6 +31370,461 @@
   # pull: 27354 (PR title: Update dependency org.apache.ant:ant to v1.10.18)
   # pull: 27356 (PR title: Update dawidd6/action-send-mail action to v19)
   # pull: 27357 (PR title: Update dependency org.jenkins-ci:winstone to v8.1050.veb_a_0d2124285)
+
+  - version: '2.582'
+    date: 2026-09-12
+    changes:
+      - type: rfe
+        category: rfe
+        pull: 27282
+        authors:
+          - daniel-beck
+        pr_title: Add new root cert, delete the expired one, update v2 
+          description to match
+        message: |-
+          Add a new Jenkins project root certificate as a trust anchor for update sites (2026-2036) in preparation for the current one's expiration in 2028.
+      - type: bug
+        category: bug
+        pull: 27233
+        authors:
+          - thswlsqls
+        pr_title: Fix plain text log output dropping trailing partial lines
+        message: |-
+          Fix loss of trailing partial lines when tailing plain text console logs.
+      - type: bug
+        category: bug
+        pull: 27364
+        authors:
+          - Shreyas-Madake
+        pr_title: Fix OpenSearch XML content-type and add moz:SearchForm
+        message: |-
+          Allow Jenkins to be added to Firefox using OpenSearch.
+
+  # pull: 27348 (PR title: Update dependency vitest to v5)
+  # pull: 27362 (PR title: Update stapler.version to v2119)
+  # pull: 27367 (PR title: Update Node.js to v24.21.0)
+  # pull: 27369 (PR title: Update dependency postcss-preset-env to v11.5.2)
+  # pull: 27374 (PR title: Use a valid email format for Jenkins release bot mail sender)
+  # pull: 27376 (PR title: Update dawidd6/action-send-mail action to v21)
+
+  - version: '2.583'
+    date: 2026-09-21
+    changes:
+      - type: rfe
+        category: rfe
+        pull: 27391
+        authors:
+          - janfaracik
+        pr_title: Add initial implementation of new dashboard list for 
+          experimental Dashboard UI
+        message: |-
+          Add initial implementation of new dashboard list for experimental Dashboard UI.
+      - type: rfe
+        category: rfe
+        pull: 27097
+        authors:
+          - janfaracik
+        pr_title: Show a 'Success' banner on Manage Jenkins page save
+        message: |-
+          Show a 'Success' banner on Manage Jenkins page save.
+      - type: rfe
+        category: rfe
+        pull: 27189
+        authors:
+          - janfaracik
+        pr_title: Add initial implementation of new builds list for experimental
+          Job UI
+        message: |-
+          Add initial implementation of new builds list for experimental Job UI.
+      - type: bug
+        category: bug
+        pull: 27381
+        authors:
+          - Dev-next-gen
+        pr_title: Fix QueryParameterMap failing on parameters without a value
+        message: |-
+          Fix <code>QueryParameterMap</code> throwing an exception on query parameters without a value.
+
+  # pull: 27379 (PR title: Update dependency org.bouncycastle:bcprov-jdk18on to v1.86)
+  # pull: 27382 (PR title: Update dependency vite to v8.3.0)
+  # pull: 27383 (PR title: Update babel monorepo to v8.0.6)
+  # pull: 27393 (PR title: Update dependency sass to v1.104.1)
+  # pull: 27394 (PR title: Update dawidd6/action-send-mail action to v22)
+  # pull: 27395 (PR title: Update dependency java-jdk to v25)
+  # pull: 27397 (PR title: Update dependency postcss-preset-env to v11.5.3)
+  # pull: 27401 (PR title: Update dependency webpack to v5.111.1)
+  # pull: 27402 (PR title: Update dependency org.jenkins-ci.plugins:script-security to v1429)
+  # pull: 27407 (PR title: Update dependency vitest to v5.0.1)
+  # pull: 27410 (PR title: Fix search suggestions race between search bar init and page scripts)
+  # pull: 27411 (PR title: Remove experimental Manage Jenkins deferred loading)
+  # pull: 27415 (PR title: Update dependency prettier to v3.9.8)
+  # pull: 27416 (PR title: Update dependency jsdom to v30.1.0)
+  # pull: 27417 (PR title: Update dependency org.xmlunit:xmlunit-bom to v2.14.0)
+  # pull: 27418 (PR title: Update dependency org.jenkins-ci.plugins:junit to v1428)
+  # pull: 27420 (PR title: Update babel monorepo to v8.0.6)
+
+  - version: '2.584'
+    date: 2026-09-28
+    changes:
+      - type: rfe
+        category: developer
+        pull: 27396
+        authors:
+          - Shubham-Padkonde
+        pr_title: Fix PackedMap entry equality and hash codes
+        message: |-
+          Honor entry equality and hashcode contracts in <code>PackedMap</code>.
+      - type: rfe
+        category: rfe
+        pull: 27439
+        authors:
+          - daniel-beck
+          - MarkEWaite
+        pr_title: Increase minimum required Remoting version from 
+          3176.v207ec082a_8c0 to 3256.3258.v858f3c9a_f69d
+        message: |-
+          Drop support for Remoting (agent.jar) releases prior to August 2024.
+      - type: bug
+        category: bug
+        pull: 27406
+        authors:
+          - jglick
+        pr_title: Do not persist `workspaceDir` + `buildsDir`
+        message: |-
+          <code>workspaceDir</code> and <code>buildsDir</code> are no longer persisted in <code>$JENKINS_HOME/config.xml</code>. If these must be overridden, use the <code>jenkins.model.Jenkins.workspacesDir</code> or <code>jenkins.model.Jenkins.buildsDir</code> system properties, respectively.
+      - type: bug
+        category: bug
+        pull: 27414
+        authors:
+          - Kanhaiya76618
+        pr_title: Fix TypeError in breadcrumbs-overflow when logo item is 
+          missing
+        message: |-
+          Prevent <code>TypeError</code> in breadcrumbs overflow calculation when breadcrumb elements are missing or not yet attached.
+      - type: bug
+        category: bug
+        pull: 27331
+        authors:
+          - MarkEWaite
+          - log0u7 (logout@github.com)
+        pr_title: Reword the -jnlpUrl deprecation warning on JNLP file downloads
+        message: |-
+          Reword the deprecation warning logged on JNLP file downloads to describe the endpoint instead of blaming the agent connection
+      - type: bug
+        category: bug
+        pull: 27388
+        authors:
+          - oleksii-tumanov
+        pr_title: Avoid creating ZIP entries for unreadable files
+        message: |-
+          Do not create ZIP entries for input files that cannot be opened.
+
+  # pull: 27419 (PR title: Use new `surface` mixin in for search suggestions and row selection controller)
+  # pull: 27421 (PR title: Update dependency webpack to v5.111.1)
+  # pull: 27423 (PR title: Update dependency eslint to v10.11.0)
+  # pull: 27425 (PR title: Update dependency org.slf4j:slf4j-bom to v2.0.20)
+  # pull: 27432 (PR title: Remove dead ".crumb" fallback in CrumbFilter)
+  # pull: 27435 (PR title: Update dependency jsdom to v30.1.1)
+  # pull: 27436 (PR title: Update dependency org.jenkins-ci.main:jenkins-test-harness to v2587)
+  # pull: 27437 (PR title: Update dependency org.jenkins-ci.plugins:matrix-project to v928)
+  # pull: 27441 (PR title: Update dependency sass to v1.105.0)
+  # pull: 27442 (PR title: Update dependency org.jenkins-ci.plugins:junit to v1431)
+  # pull: 27444 (PR title: Update dependency prettier to v3.9.9)
+  # pull: 27449 (PR title: Update dependency vite to v8.3.1)
+
+  - version: '2.585'
+    date: 2026-10-05
+    changes:
+      - type: major rfe
+        category: major rfe
+        pull: 27380
+        authors:
+          - janfaracik
+          - MarkEWaite
+        pr_title: Standardise experimental Jenkins pages, make the side panel 
+          independently scrollable + make the build bar sticky
+        message: |-
+          Standardise experimental Jenkins pages, make the side panel independently scrollable, and make the build bar sticky.
+      - type: major rfe
+        category: major rfe
+        pull: 26999
+        authors:
+          - janfaracik
+        pr_title: Enable new Manage Jenkins UI by default
+        message: |-
+          Enable new Manage Jenkins UI by default.
+      - type: rfe
+        category: rfe
+        pull: 27471
+        authors:
+          - mawinter69
+          - MarkEWaite
+        pr_title: Show cloud displayname instead of name
+        message: |-
+          Use display name for clouds
+      - type: rfe
+        category: rfe
+        pull: 27408
+        authors:
+          - janfaracik
+        pr_title: Add filtering to experimental Job page
+        message: |-
+          Add filtering to experimental Job page
+      - type: rfe
+        category: rfe
+        pull: 27058
+        issue: 75944
+        authors:
+          - AbdelHamdyGhanem
+        pr_title: "[JENKINS-75944] Clarify the RequirePOST warning page"
+        message: |-
+          Improve the phrasing of the warning message provided with a POST request.
+      - type: rfe
+        category: rfe
+        pull: 26170
+        authors:
+          - dmitrykinakh
+          - daniel-beck
+        pr_title: Update Ukrainian translation for browser reload message
+        message: |-
+          Update Ukrainian translation for browser reload message.
+      - type: bug
+        category: bug
+        pull: 27032
+        authors:
+          - thswlsqls
+        pr_title: Fix sortable date column ordering for 12 AM (midnight) times
+        message: |-
+          Fix sortable date column ordering so 12 AM (midnight) times sort before later morning times.
+      - type: bug
+        category: bug
+        pull: 27474
+        authors:
+          - QuantumTandorisa
+        pr_title: Fix missing return after sendError in doDoFingerprintCheck
+        message: |-
+          Fix <code>IllegalStateException</code> in the fingerprint check when the CSRF crumb is invalid.
+      - type: bug
+        category: bug
+        pull: 27387
+        authors:
+          - thswlsqls
+          - timja
+        pr_title: Fix missing badges on header dropdown menu items
+        message: |-
+          Fix missing badges on header dropdown menu items, such as the API token expiration badge on the user "Security" entry.
+      - type: bug
+        category: bug
+        pull: 27483
+        authors:
+          - mawinter69
+          - timja
+        pr_title: Fix missing `New Item` button in new dashboard view
+        message: |-
+          Fix missing <code>New Item</code> button in new dashboard view.
+
+  # pull: 27389 (PR title: Update dependency org.jenkins-ci:jenkins to v2.1413.v65a_1fb_5a_dd02)
+  # pull: 27454 (PR title: Update dependency postcss-preset-env to v11.5.4)
+  # pull: 27455 (PR title: Update dependency vitest to v5.0.2)
+  # pull: 27456 (PR title: Update mina-sshd.version to v2.20.0)
+  # pull: 27459 (PR title: Update dependency com.google.guava:guava to v33.7.2-jre)
+  # pull: 27460 (PR title: Use same file name template for LTS asset upload as for weekly)
+  # pull: 27462 (PR title: Lock file maintenance)
+  # pull: 27464 (PR title: Adapt OS EOL test for Ubuntu 22.04)
+  # pull: 27468 (PR title: Update release-drafter/release-drafter action to v7.9.0)
+  # pull: 27470 (PR title: Use LOGGER instead of System.out in doSimulateOutOfMemory)
+  # pull: 27473 (PR title: Update dependency sass to v1.105.1)
+  # pull: 27478 (PR title: Update dependency vitest to v5.0.3)
+  # pull: 27479 (PR title: Update dependency org.jenkins-ci.plugins:junit to v1432)
+  # pull: 27487 (PR title: Update dependency postcss-preset-env to v11.5.5)
+  # pull: 27489 (PR title: Update dependency globals to v17.13.0)
+  # pull: 27490 (PR title: Update dependency stylelint to v17.16.0)
+  # pull: 27491 (PR title: Fix sidepanel search padding)
+
+  - version: '2.586'
+    date: 2026-10-12
+    changes:
+      - type: rfe
+        category: rfe
+        pull: 27527
+        authors:
+          - janfaracik
+          - timja
+        pr_title: Standardise shadows and focus rings for controls
+        message: |-
+          Standardise shadows and focus rings for controls.
+      - type: rfe
+        category: rfe
+        pull: 27529
+        authors:
+          - janfaracik
+        pr_title: Remove Manage Jenkins breadcrumb menu
+        message: |-
+          Remove Manage Jenkins breadcrumb menu.
+      - type: rfe
+        category: rfe
+        pull: 27526
+        authors:
+          - janfaracik
+        pr_title: Update User settings pages interface
+        message: |-
+          Update User account pages interface.
+      - type: rfe
+        category: rfe
+        pull: 27499
+        authors:
+          - Somesh-coding
+        pr_title: Warn about unsafe authorization strategy
+        message: |-
+          Warn administrators when using an authorization strategy that grants full administrative access to all authenticated users.
+      - type: rfe
+        category: rfe
+        pull: 27500
+        authors:
+          - jglick
+        pr_title: Log stack traces for `OldDataMonitor.report` on `Run`
+        message: |-
+          When portions of historical build records could not be loaded from disk, print diagnostic information to the system log.
+      - type: bug
+        category: bug
+        pull: 27167
+        issue: 62218
+        authors:
+          - Racknaraock
+        pr_title: Propagate readOnlyMode into all dropdownDescriptorSelector 
+          fragments in core
+        message: |-
+          Fix several <code>dropdownDescriptorSelector</code>based configuration fields (SCM Checkout Strategy on Job pages, agent launch method/retention strategy, Maven settings providers, fingerprint storage engine, discardoldbuilds strategy, views tab bar, crumb issuer, password complexity rule, Security Realm/Authorization/Markup Formatter on the Security page) not respecting readonly mode for viewers with <code>Item.EXTENDED_READ</code>/<code>Overall.SYSTEM_READ</code>.
+      - type: bug
+        category: bug
+        pull: 27497
+        authors:
+          - thswlsqls
+        pr_title: Use Locale.ROOT for case-insensitive matching in 
+          CollectionSearchIndex
+        message: |-
+          Fix case insensitive search suggestions missing items when the JVM default locale is Turkish or Azerbaijani.
+      - type: bug
+        category: bug
+        pull: 27065
+        issue: 75310
+        authors:
+          - U-S-jun
+        pr_title: "[JENKINS-75310] Fix log recorder level updates"
+        message: |-
+          Apply less verbose custom log recorder levels without retaining stale controller logger state.
+      - type: bug
+        category: bug
+        pull: 26668
+        authors:
+          - zbynek
+        pr_title: Limit dialog width to 100% of visible area
+        message: |-
+          Limit dialog width to visible area for better small screen support.
+
+  # pull: 27340 (PR title: Add support for `hudson.model.Failure` in CLI error output)
+  # pull: 27488 (PR title: Update dependency vite to v8.3.2)
+  # pull: 27493 (PR title: Update dependency io.jenkins.plugins:commons-lang3-api to v3.21.0-122.v6a_ea_4fd34049)
+  # pull: 27506 (PR title: Use Jetty 12.1.14 from Winstone and Stapler updates)
+  # pull: 27507 (PR title: Use ASM 9.11 to silence security scanners)
+  # pull: 27510 (PR title: Update dependency handlebars to v4.7.10)
+  # pull: 27511 (PR title: Run ATH tests on Java 25 in CI)
+  # pull: 27512 (PR title: Update dependency jsdom to v30.1.2)
+  # pull: 27513 (PR title: Update dependency org.jenkins-ci.plugins:bouncycastle-api to v2.30.1.86.1-306.vfc711fa_36d5f)
+  # pull: 27514 (PR title: Update dependency postcss to v8.5.29)
+  # pull: 27515 (PR title: Update dependency vite to v8.3.3)
+  # pull: 27516 (PR title: Update dependency eslint to v10.12.0 - autoclosed)
+  # pull: 27517 (PR title: Update dependency io.jenkins.plugins:caffeine-api to v3.3.0-210.v71b_2985ce530)
+  # pull: 27518 (PR title: Update dependency postcss-preset-env to v11.6.1)
+  # pull: 27519 (PR title: Update release-drafter/release-drafter action to v7.10.0)
+  # pull: 27521 (PR title: Update dependency org.jenkins-ci.plugins:script-security to v1433)
+  # pull: 27522 (PR title: Update actions/upload-artifact action to v7.0.2)
+  # pull: 27523 (PR title: Clean up obsolete Java version checks in tests)
+  # pull: 27524 (PR title: Update babel monorepo to v8.0.7)
+  # pull: 27525 (PR title: Update dependency org.jenkins-ci.plugins:junit to v1437)
+  # pull: 27528 (PR title: Lock file maintenance)
+  # pull: 27530 (PR title: Update dependency commons-codec:commons-codec to v1.23.0)
+  # pull: 27534 (PR title: Update actions/create-github-app-token action to v3.3.0)
+
+  - version: '2.587'
+    date: 2026-10-18
+    changes:
+      - type: bug
+        category: regression
+        pull: 27424
+        authors:
+          - nebezpechnoste
+          - krisstern
+        pr_title: Keep ANSI colours in the live console after a pause in output
+        message: |-
+          Keep ANSI colours in the live console of freestyle builds after a pause in output.
+      - type: bug
+        category: bug
+        pull: 27556
+        authors:
+          - NUAAwqy
+        pr_title: Clarify quiet-down -block help text regarding Pipeline jobs
+        message: |-
+          Clarify that the <code>block</code> option of the <code>quietdown</code> CLI command does not wait for running Pipeline jobs
+      - type: bug
+        category: bug
+        pull: 27428
+        authors:
+          - Kanhaiya76618
+        pr_title: Canonicalize cached label expressions to share load statistics
+        message: |-
+          Canonicalize cached label expressions so whitespace variants share the same Label instance and load statistics.
+      - type: bug
+        category: bug
+        pull: 26818
+        authors:
+          - Anexus5919
+        pr_title: 'fix(ui): show concise error on form field validation failure during
+          page load'
+        message: |-
+          Show the concise form field validation error message instead of a full error page when a validation check fails during initial page load.
+      - type: bug
+        category: bug
+        pull: 26690
+        authors:
+          - donhui
+        pr_title: Match job names in global search suggestions
+        message: |-
+          Match global job search suggestions against both job names and display names.
+      - type: bug
+        category: bug
+        pull: 27542
+        authors:
+          - MarkEWaite
+        pr_title: Revert "Update dependency commons-codec:commons-codec to 
+          v1.23.0"
+        message: |-
+          Revert to Apache Commons Codec 1.22.1 to fix a decoding regression (regression in 2.586).
+
+  - version: "2.588"
+    date: 2026-10-28
+    changes:
+    - type: security
+      message: Important security fixes.
+      references:
+        - url: /security/advisory/2026-10-28/
+          title: security advisory
+
+  # pull: 27533 (PR title: Update dependency org.jenkins-ci.plugins:bouncycastle-api to v2.30.1.86.2-310.v4655f6742752)
+  # pull: 27535 (PR title: Update dependency prettier to v3.9.10)
+  # pull: 27536 (PR title: Update dependency org.jenkins-ci.plugins:credentials to v1514)
+  # pull: 27537 (PR title: Update dependency org.jenkins-ci.plugins:junit to v1438)
+  # pull: 27547 (PR title: Update dependency vitest to v5.0.4)
+  # pull: 27548 (PR title: Update dependency io.jenkins.plugins:plugin-util-api to v7.1403.vd380b_c42e90c)
+  # pull: 27549 (PR title: Update Node.js to v24.22.0)
+  # pull: 27550 (PR title: Update dependency io.jenkins.plugins:design-library to v483)
+  # pull: 27551 (PR title: Update dependency org.jenkins-ci.plugins:junit to v1442)
+  # pull: 27552 (PR title: Update dependency org.jenkins-ci.plugins:script-security to v1436)
+  # pull: 27554 (PR title: Update dependency postcss to v8.5.30)
+  # pull: 27557 (PR title: Fix ArtifactArchiver javadoc: patterns must be comma-separated)
+  # pull: 27563 (PR title: Update dependency org.ow2.asm:asm to v9.11.1)
+  # pull: 27564 (PR title: Update dependency jsdom to v30.1.3)
+  # pull: 27566 (PR title: Update dependency vitest to v5.0.5)
 
 # DO NOT EDIT THIS FILE DIRECTLY ON GITHUB IF YOU HAVE COMMIT ACCESS
 # ALL CHANGES MUST GO THROUGH PULL REQUESTS

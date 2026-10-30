@@ -12,7 +12,7 @@ video::ZabUz6sl-8I[youtube,width=800,height=420]
 
 As with any upgrade, we recommend:
 
-. link:https:/doc/book/system-administration/backing-up/#jenkins_home[Backing up `JENKINS_HOME`].
+. link:/doc/book/system-administration/backing-up/#jenkins_home[Backing up `JENKINS_HOME`].
 . Testing the upgrade with your backup.
 . Only after all required tests pass, performing the upgrade on your production controller.
 
@@ -38,6 +38,8 @@ Plugin upgrades assure compatibility with the most recent Jenkins releases.
 
 NOTE: If you discover a previously unreported issue, please let us know.
 Refer to link:/participate/report-issue/#issue-reporting[our issue reporting documentation] for guidance.
+
+Starting with Jenkins releases 2.545 and LTS 2.555.1, Java 21 is required.
 
 == JVM version on agents
 
